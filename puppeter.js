@@ -12,7 +12,7 @@ import puppeteer from 'puppeteer';
   await page.setViewport({width: 1080, height: 1024});
 
   // Query for an element handle.
-  const element = await page.$eval('.MV3Tnb',  el => el.href)
+  const element = await page.$eval('.MV3Tnb',  el => el.textContent)
 
 console.log(element)
 
