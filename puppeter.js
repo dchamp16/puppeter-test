@@ -6,21 +6,16 @@ import puppeteer from 'puppeteer';
   const page = await browser.newPage();
 
   // Navigate the page to a URL
-  await page.goto('https://www.hostinger.com/tutorials/blog-examples');
+  await page.goto('https://www.google.com/');
 
   // Set screen size
   await page.setViewport({width: 1080, height: 1024});
 
   // Query for an element handle.
-  const element = await page.waitForSelector('div > .post-info')
+  const element = await page.$eval('.MV3Tnb',  el => el.href)
 
+console.log(element)
 
-
-  // Do something with element...
-  await element.click(); // Just an example.
-
-  // Dispose of handle
-  await element.dispose();
 
   // Close browser.
   await browser.close();
